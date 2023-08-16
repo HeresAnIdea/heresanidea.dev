@@ -1,4 +1,6 @@
-const IdeaCard = ({ idea }) => {
+import { Idea } from "../../types/index";
+
+const IdeaCard = ({ idea }: { idea: Idea }) => {
   return (
     <div className="border p-4 rounded-lg">
       <h2 className="font-semibold text-lg">{idea.title}</h2>
