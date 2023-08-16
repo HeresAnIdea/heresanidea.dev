@@ -24,7 +24,7 @@ const ComingSoon = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screen space-y-8 p-4">
       <h1 className="text-2xl font-bold text-center">
-        Welcome to HeresAnIdea.dev
+        Welcome to HeresAnIdea.DEV
       </h1>
       <p className="w-3/4 text-center text-gray-600">
         HeresAnIdea.dev is a novel platform for indie developers to pitch,
