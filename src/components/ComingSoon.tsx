@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { sql } from "@vercel/postgres";
+import axios from "axios";
 
 const ComingSoon = () => {
   const [email, setEmail] = useState("");
@@ -10,7 +11,7 @@ const ComingSoon = () => {
   const handleSubscribe = async () => {
     try {
       // Post the email to your backend or mailing list manager.
-      await sql`INSERT INTO mailing_list (email) VALUES (${email})`;
+      await axios.post(`/api/mailing-list?email=${email}`);
 
       // Set a success message.
       setMessage(
