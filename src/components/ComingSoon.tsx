@@ -23,7 +23,7 @@ const ComingSoon = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen space-y-8 p-4">
+    <div className="flex flex-col items-center justify-center space-y-6 h-screen p-4">
       <h1 className="text-2xl font-bold text-center">
         Welcome to HeresAnIdea.DEV
       </h1>
@@ -37,16 +37,16 @@ const ComingSoon = () => {
       <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 w-3/4 max-w-lg">
         <input
           type="email"
-          placeholder="Your email address"
+          placeholder=" Your email address"
           className="p-2 border rounded w-full"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <button
           onClick={handleSubscribe}
-          className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600 w-full sm:w-auto"
+          className="bg-blue-500 text-white px-6 rounded hover:bg-blue-600 w-full sm:w-auto"
         >
-          Join the List
+          Join
         </button>
       </div>
       {message && <p className="text-center">{message}</p>}
