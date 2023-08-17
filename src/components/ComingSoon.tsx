@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { sql } from "@vercel/postgres";
 import axios from "axios";
 
 const ComingSoon = () => {
