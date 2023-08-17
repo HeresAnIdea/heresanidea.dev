@@ -2,6 +2,7 @@ import "./globals.css";
 import type { AppProps } from "next/app";
 import Navbar from "../components/Navbar";
 import ComingSoon from "../components/ComingSoon";
+import Link from "next/link";
 
 function MyApp() {
   return (
@@ -10,8 +11,9 @@ function MyApp() {
       <div className="container mx-auto">
         <ComingSoon />
       </div>
-      <footer className="flex justify-center w-full h-6 pr-3 text-gray-600">
-        @nociza 2023 - all rights reserved
+      <footer className="flex justify-center w-full text-gray-600 font-extralight">
+        <Link href="https://www.nociza.com/me">@nociza 2023</Link> - all rights
+        reserved
       </footer>
     </div>
   );

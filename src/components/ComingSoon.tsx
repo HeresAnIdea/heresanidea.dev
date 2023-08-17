@@ -23,7 +23,7 @@ const ComingSoon = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center space-y-6 h-screen p-4">
+    <div className="flex flex-col items-center justify-center space-y-6 h-screen px-4 -mb-9">
       <h1 className="text-2xl font-bold text-center">
         Welcome to HeresAnIdea.DEV
       </h1>
