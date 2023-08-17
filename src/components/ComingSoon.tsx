@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import axios from "axios"; // assuming you will use axios to make API calls.
+import { sql } from "@vercel/postgres";
 
 const ComingSoon = () => {
   const [email, setEmail] = useState("");
@@ -10,7 +10,7 @@ const ComingSoon = () => {
   const handleSubscribe = async () => {
     try {
       // Post the email to your backend or mailing list manager.
-      await axios.post("/api/subscribe", { email });
+      await sql`INSERT INTO mailing_list (email) VALUES (${email})`;
 
       // Set a success message.
       setMessage(
@@ -26,7 +26,7 @@ const ComingSoon = () => {
       <h1 className="text-2xl font-bold text-center">
         Welcome to HeresAnIdea.DEV
       </h1>
-      <p className="w-3/4 text-center text-gray-600">
+      <p className="w-3/4 text-center">
         HeresAnIdea.dev is a novel platform for indie developers to pitch,
         discuss, and refine ideas in a collaborative environment. As we&apos;re
         working hard to prepare our launch, we invite you to join our early
