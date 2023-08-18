@@ -18,7 +18,10 @@ const Navbar = () => {
           {session ? (
             <Image
               alt="profile"
-              src="https://miro.medium.com/v2/resize:fit:720/1*W35QUSvGpcLuxPo3SRTH4w.png"
+              height={40}
+              width={40}
+              className="rounded-full"
+              src={session.user?.image as string}
             />
           ) : (
             <Link href="/login">Login</Link>
