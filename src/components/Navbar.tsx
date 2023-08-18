@@ -16,13 +16,15 @@ const Navbar = () => {
         </h1>
         <div className="space-x-4">
           {session ? (
-            <Image
-              alt="profile"
-              height={40}
-              width={40}
-              className="rounded-full"
-              src={session.user?.image as string}
-            />
+            <Link href="/profile">
+              <Image
+                alt="profile"
+                height={40}
+                width={40}
+                className="rounded-full"
+                src={session.user?.image as string}
+              />
+            </Link>
           ) : (
             <Link href="/login">Login</Link>
           )}
