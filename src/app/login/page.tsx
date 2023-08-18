@@ -15,6 +15,11 @@ export default function Login() {
     // Validate the user against database
     // and establish a session or send back a JWT or some authentication token.
   }
+
+  async function handleGithubLogin() {
+    await signIn("github", authOptions);
+  }
+
   return (
     <div>
       <Navbar />
@@ -49,7 +54,7 @@ export default function Login() {
 
           <button
             type="button"
-            onClick={() => signIn("github", authOptions)}
+            onClick={handleGithubLogin}
             className="w-full bg-gray-800 text-white p-2 rounded hover:bg-gray-900 mt-4"
           >
             Login with Github

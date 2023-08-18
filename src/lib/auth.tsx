@@ -1,9 +1,4 @@
-"use client";
-
-import NextAuth from "next-auth";
 import GithubProvider from "next-auth/providers/github";
-import { ReactNode } from "react";
-import { SessionProvider } from "next-auth/react";
 
 export const authOptions = {
   providers: [
@@ -12,12 +7,17 @@ export const authOptions = {
       clientSecret: process.env.GITHUB_CLIENT_SECRET as string,
     }),
   ],
+  callbacks: {
+    async signIn({ user, account, profile, email, credentials }: any) {
+      const isAllowedToSignIn = true;
+      if (isAllowedToSignIn) {
+        return true;
+      } else {
+        // Return false to display a default error message
+        return false;
+        // Or you can return a URL to redirect to:
+        // return '/unauthorized'
+      }
+    },
+  },
 };
-
-export default function NextAuthProvider({
-  children,
-}: {
-  children: ReactNode;
-}) {
-  return <SessionProvider>{children}</SessionProvider>;
-}
