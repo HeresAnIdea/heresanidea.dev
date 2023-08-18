@@ -11,7 +11,7 @@ export const authOptions = {
   ],
   callbacks: {
     async signIn({ user, account, profile, email, credentials }: any) {
-      if (INTERNAL_USERS.includes(user.name)) {
+      if (INTERNAL_USERS.includes(profile.name)) {
         return true;
       } else {
         return false;
