@@ -14,7 +14,7 @@ const Navbar = () => {
         <h1 className="text-xl font-bold">
           <Link href="/">HeresAnIdea.DEV</Link>
         </h1>
-        <div className="space-x-4">
+        <div className="space-x-4 flex items-center">
           {session ? (
             <Link href="/profile">
               <div className="flex items-center space-x-2">
