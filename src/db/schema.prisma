@@ -1,0 +1,44 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider  = "postgresql"
+    url       = env("POSTGRES_PRISMA_URL")
+    directUrl = env("POSTGRES_URL_NON_POOLING")
+}
+
+model users {
+    id        Int        @id @default(autoincrement())
+    name      String
+    email     String     @unique
+    image     String
+    authType  String     @default("github")
+    createdAt DateTime   @default(now())
+    ideas     ideas[]
+    comments  comments[]
+}
+
+model ideas {
+    id          Int        @id @default(autoincrement())
+    title       String
+    description String
+    createdAt   DateTime   @default(now())
+    author      users      @relation(fields: [authorId], references: [id])
+    authorId    Int
+    comments    comments[]
+}
+
+model comments {
+    id        Int      @id @default(autoincrement())
+    body      String
+    createdAt DateTime @default(now())
+    author    users    @relation(fields: [authorId], references: [id])
+    authorId  Int
+    idea      ideas    @relation(fields: [ideaId], references: [id])
+    ideaId    Int
+}
+
+model mailingList {
+    email String @unique
+}

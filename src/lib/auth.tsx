@@ -1,4 +1,5 @@
 import GithubProvider from "next-auth/providers/github";
+import { Session } from "next-auth";
 
 const INTERNAL_USERS = ["nociza"];
 
