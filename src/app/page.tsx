@@ -1,6 +1,7 @@
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import ComingSoon from "../components/ComingSoon";
+//import Main from "../components/MainPage";
 import Link from "next/link";
 
 function MyApp() {
